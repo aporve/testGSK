@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ema 2.0</title>
+    <meta charset="utf-8" />
+    <script src="/pwa/install"></script>
+    <link
+      rel="manifest"
+      href="https://app.yellowmessenger.com/pwa/manifest.json?script_version=v1&link=live&bot=x1666274014901&name=Ema 2.0&icon=https://cdn.yellowmessenger.com/gDzClw4UHrAO1663753717756.png&icon_192=https://cdn.yellowmessenger.com/duwMVBI4o2jv1628673677977.png&icon_512=https://cdn.yellowmessenger.com/0lY4RS4pba9D1628673729429.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.yellowmessenger.com/gDzClw4UHrAO1663753717756.png"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <style>
+      body {
+        min-height: 100vh;
+      }
+
+      @media screen and (max-device-width: 640px) {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+
+        iframe {
+          width: 100%;
+          height: 100vh;
+          margin-top: 0;
+          border-radius: 0 !important;
+          position: relative;
+        }
+
+        .col-md-8 {
+          padding: 0;
+        }
+      }
+
+      @media screen and (max-device-width: 768px) {
+        #ymFrameHolder {
+          width: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"
+      integrity="sha512-BIZ2jCyZcsRog2Hq8mx7T5uhvZrbZH3lfXPnfhkq4C2umWvMHWVoLcDv8Z+rkYuurjVwjegAbyma6y/Vt+8MQg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/6.5.0/firebase-messaging.js"
+      integrity="sha512-9+0Zb58P4gBIloFIq1Q6GTOa/58XT9pKvH1l51SAbqsJDgPJXU0AECnLpH+U1biZ6+CvePN22boO6w/CPMQRdg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      nonce="b4c3be1effdf249a18cf3b958e1dbdf7d47fb0e3a394737fc750fd90af3594d69376ba207061dab3541647381858e3c345ad5d29f516eaab03aeb87ace290e53"
+    >
+      window.ymConfig = {
+        bot: "x1666274014901",
+        pwa: true,
+        fullScreen: "true",
+        payload: {
+          token:
+            "iXJ3M+qzvGfTdj+wyHD3KLWa53eOSrcfI77ZW6q+gylqj0DG5HNrEAbKTWhsNx2vm/7dQW06KGPK/Im3Dei/Rw==",
+        },
+        linkType: "live",
+        host: "https://app.yellowmessenger.com",
+      };
+      (function () {
+        var w = window,
+          ic = w.YellowMessenger;
+        if ("function" === typeof ic)
+          ic("reattach_activator"), ic("update", ymConfig);
+        else {
+          var d = document,
+            i = function () {
+              i.c(arguments);
+            };
+          const origin = "app.yellowmessenger.com";
+          if (!origin) {
+            throw new Error("Origin is not defined");
+          }
+          const integrity = "";
+          const sourceUrl = "https://" + origin + "/widget/live.js";
+          function l() {
+            var e = d.createElement("script");
+            (e.type = "text/javascript"), (e.async = !0), (e.src = sourceUrl);
+            if (integrity) {
+              e.integrity = integrity;
+              e.crossOrigin = "anonymous";
+            }
+            var t = d.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(e, t);
+          }
+
+          (i.q = []),
+            (i.c = function (e) {
+              i.q.push(e);
+            }),
+            (w.YellowMessenger = i),
+            w.attachEvent
+              ? w.attachEvent("onload", l)
+              : w.addEventListener("load", l, !1);
+        }
+        if ("serviceWorker" in window.navigator) {
+          window.navigator.serviceWorker
+            .register("https://cloud.yellowmessenger.com/pwa/service-worker", {
+              scope: "/pwa/live/x1666274014901",
+            })
+            .then(function (reg) {
+              console.log("Service worker registered.", reg);
+            })
+            .catch(function (err) {
+              console.log("No it didn't. This happened:", err);
+            });
+        }
+      })();
+    </script>
+  </body>
+</html>
